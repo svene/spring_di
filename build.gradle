@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+	mavenRepo urls:'http://repo.smokejumperit.com'
+	mavenRepo urls: "http://m2repo.spockframework.org/snapshots"
+}
+
+dependencies {
+	groovy 'org.codehaus.groovy:groovy:1.7.8'
+	compile 'org.springframework:spring-beans:3.0.5.RELEASE'
+	compile 'org.springframework:spring-context:3.0.5.RELEASE'
+	compile 'cglib:cglib-nodep:2.2'
+	testCompile 'junit:junit:4.8'
+	testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
+}
+
+sourceCompatibility = 1.5
+
+version = '1.0'
+manifest.mainAttributes(
+	'Implementation-Title': 'spring_aspectj_di',
+	'Implementation-Version': version
+)
+
